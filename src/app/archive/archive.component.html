@@ -1,0 +1,111 @@
+ <mat-tab-group>
+  <!-- <mat-tab label="Buser">
+<mat-card style="border-radius: 0px 0px 5px 5px;">
+  <div>
+    <mat-form-field>
+      <mat-label style="font-size: large">
+        <mat-icon>search</mat-icon>
+      </mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter/Søg" #input />
+    </mat-form-field>
+    <table #mattable mat-table [dataSource]="matdatasource" multiTemplateDataRows class="mat-elevation-z8" matSort> -->
+
+<!-- Id Column -->
+<!-- <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+        <td mat-cell *matCellDef="let element">{{ element.getId() }}</td>
+      </ng-container> -->
+
+<!-- Name Column -->
+<!-- <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Navnl</th>
+        <td mat-cell *matCellDef="let element">{{ element.getName() }}</td>
+      </ng-container> -->
+
+<!-- Make Column -->
+<!-- <ng-container matColumnDef="make">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>model</th>
+        <td mat-cell *matCellDef="let element">{{ element.getCompleted() ? "Ja" : "Nej" }}
+          <a style="z-index: 10;">
+            <button mat-ripple (click)="GetBusInfomation(element)"
+              style="background-color:transparent; border-color: transparent; cursor: pointer; z-index: 1;">
+              <mat-icon>done</mat-icon>
+            </button>
+          </a>
+        </td>
+      </ng-container> -->
+
+<!-- driver Column -->
+<!-- <ng-container matColumnDef="driver">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>driver</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.Getdriver() }}
+        </td>
+      </ng-container> -->
+<!-- routeid Column -->
+<!-- <ng-container matColumnDef="routeid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>routeid</th>
+        <td mat-cell *matCellDef="let element">{{ element.getRouteid() }}<a
+            *ngIf="element.getDocumentsList().length <= 0" style="z-index: 10;">
+
+            <button mat-ripple (click)="DeleteBus(element)"
+              style="background-color:transparent; border-color: transparent; cursor: pointer; z-index: 1;">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </a>
+        </td>
+      </ng-container> -->
+
+<!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+<!-- <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+          <div  class="example-element-detail" [@detailExpand]="(element === Buss) ? 'expanded' : 'collapsed'">
+              <table *ngIf="GetAllBuss(element).getBusList()[0].getId() != 0">
+                <thead style="border-bottom: 1px solid #494949;">
+                  <tr >
+                    <th style="border-bottom: 1px solid #757575; width: 35%; text-align: left; padding: 0px;">Nacn</th>
+                    <th style="border-bottom: 1px solid #757575; width: 15%; text-align: center; padding: 0px;">Make</th>
+                    <th style="border-bottom: 1px solid #757575; width: 50%; text-align: center; padding: 0px;">ID</th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr *ngFor="let item of geList(element).getBusList()" >
+
+                    <td style="overflow: hidden;
+                    text-overflow: clip;
+                    max-width: 0px;" class="hoverme" > {{item.getId()}}
+                  </td>
+                    <td id="testid" style="text-align: center;">
+                    </td>
+<label>stuff ehre</label>
+                    <td>
+                      <label>stuff ehre</label>
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+          </div>
+        </td>
+      </ng-container>-->
+
+<!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="example-element-row"
+        [class.example-expanded-row]="Bus == row" (click)="Bus = Bus  == row ? null: row"
+        style="overflow: hidden;">
+      </tr>
+      <tr style="overflow: hidden;" mat-row *matRowDef="let row; columns: ['expandedDetail']"
+        class="example-detail-row"></tr>
+    </table>
+
+
+    <mat-paginator #paginator [pageSizeOptions]="[5,10,25,100]"></mat-paginator>
+  </div>
+  <mat-progress-spinner style="position: absolute; top: 50%; left: 50%; translate: -50%,-50%; z-index: 5;"
+    [mode]="'indeterminate'" *ngIf="loading$ |async"></mat-progress-spinner>
+</mat-card>
+  </mat-tab> -->
+
+<!--"Nye table under here
+  <mat-card style="border-radius: 0px 0px 5px 5px;">-->
+</mat-tab-group>
