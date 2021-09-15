@@ -1,14 +1,13 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MoviaServiceService } from '../services/movia-service.service';
 import { Bus, BusRequest } from '../generated/MoviaMobilEndPiontGrpc_pb';
 
-/**
- * @title Table with expandable rows
- */
+
+
 @Component({
   selector: 'app-archive',
   templateUrl: './archive.component.html',
@@ -40,15 +39,14 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
   /*--------------SimpleDataObjects--------------*/
   public dataSource: Array<Bus> = new Array<Bus>();
   /*--------------DataTable Values--------------*/
-  displayedColumns = ["id", "name", "make", "driver", "routeid", "totaltbuscap", "currentpaxcont", "lat", "lon"];
+  displayedColumns = ["Id", "name", "make", "driver", "routeid", "totaltbuscap", "currentpaxcont"];
   matdatasource = new MatTableDataSource<Bus>(this.dataSource);
-
+  busen: Bus = new Bus();
   dataSourceBuss: Array<Bus> = new Array<Bus>();
   matdatasourceBuss = new MatTableDataSource<Bus>(this.dataSourceBuss);
-
+  Buss: Array<Bus> = new Array<Bus>();
   expandingelement: Bus = new Bus();
   isExpansionDetailRow = (id: number, row: any | Bus) => this.isExpansionDetailRows(id, row);
-
 
   constructor(private dataserve: MoviaServiceService) {
     this.dataserve.GetBusInfo("", new BusRequest());
@@ -56,7 +54,7 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
     this.dataserve.BusInfomation$.subscribe(x => {
       this.matdatasource.data = [];
       this.matdatasourceBuss.data = [];
-      if (x.getName().length !< 0) {
+      if (x.getName().length! < 0) {
         this.matdatasourceBuss.data.push((x as Bus))
         this.matdatasourceBuss._updateChangeSubscription();
       }
@@ -124,15 +122,25 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
 
   }
 
-  /**
-   * This is a control cheack to control wheter or not any giving row at any giving time can/allowed to be render.
-   * @param i the row id number
-   * @param row the row
-   * @returns boolean indication wheter or not the row can be expandede/rednder.
-   */
   isExpansionDetailRows(i: number, row: Bus): boolean {
     // console.log("Cheaking if row can be expanded");
     return true;
+  }
+
+  GetAllBuss(element: any | Bus) {
+
+  }
+  DeleteBus(element: Bus | Bus) {
+
+  }
+  GetBusInfomation(element: Bus | any): Bus {
+    let testBus = this.busen;
+    return testBus;
+  }
+
+  geList(element: Bus): Array<Bus> {
+
+    return this.Buss;
   }
 
 

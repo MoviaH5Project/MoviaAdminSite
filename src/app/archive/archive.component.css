@@ -13,16 +13,6 @@
   display: block;
 }
 
-.mat-column-completed{
-  z-index: 5;
-
-}
-.mat-column-lastedited{
-  z-index: 5;
-}
-.mat-column-endDate{
-  z-index: 5;
-}
 
 .bouttenTextMatIcon {
   padding-top: 0.5rem;

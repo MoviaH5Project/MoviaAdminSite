@@ -24,7 +24,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon'
-import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -33,6 +33,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+
 
 import { ArchiveComponent } from "./archive/archive.component";
 import { MoviaServiceService } from './services/movia-service.service';
@@ -67,7 +68,6 @@ import { MoviaServiceService } from './services/movia-service.service';
     MatNativeDateModule,
     MatRippleModule,
     MatIconModule,
-    MatSidenav,
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
