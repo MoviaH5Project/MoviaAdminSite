@@ -6,8 +6,6 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MoviaServiceService } from '../services/movia-service.service';
 import { Bus, BusRequest } from '../generated/MoviaMobilEndPiontGrpc_pb';
 
-import { isTemplateExpression } from 'typescript';
-
 /**
  * @title Table with expandable rows
  */

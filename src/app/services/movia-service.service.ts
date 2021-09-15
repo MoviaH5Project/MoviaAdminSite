@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { grpc } from '@improbable-eng/grpc-web';
-import { Bus, BusRequest } from '../generated/MoviaMobilEndPiontGrpc_pb';
-import { BusGrpcServiceClient, BusGrpcService } from '../generated/MoviaMobilEndPiontGrpc_pb_service';
 import { BehaviorSubject, Observable, of, Subject, zip } from 'rxjs';
+import { Bus, BusRequest } from '../generated/MoviaMobilEndPiontGrpc_pb';
+import { BusGrpcService } from '../generated/MoviaMobilEndPiontGrpc_pb_service';
 
 @Injectable({
   providedIn: 'root'

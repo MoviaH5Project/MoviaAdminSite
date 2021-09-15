@@ -1,7 +1,7 @@
 // package: BusGrpcProto
 // file: src/app/protos/MoviaMobilEndPiontGrpc.proto
 
-var src_app_protos_MoviaMobilEndPiontGrpc_pb = require("../../../src/app/generated/MoviaMobilEndPiontGrpc_pb");
+var src_app_protos_MoviaMobilEndPiontGrpc_pb = require("../generated/MoviaMobilEndPiontGrpc_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var BusGrpcService = (function () {

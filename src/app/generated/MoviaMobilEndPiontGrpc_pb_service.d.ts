@@ -1,7 +1,7 @@
 // package: BusGrpcProto
 // file: src/app/protos/MoviaMobilEndPiontGrpc.proto
 
-import * as src_app_protos_MoviaMobilEndPiontGrpc_pb from "../../../src/app/generated/MoviaMobilEndPiontGrpc_pb";
+import * as src_app_protos_MoviaMobilEndPiontGrpc_pb from "../generated/MoviaMobilEndPiontGrpc_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type BusGrpcServiceCreateBus = {

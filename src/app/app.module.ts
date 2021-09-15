@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GrpcCoreModule } from '@ngx-grpc/core';
-import { grpc } from '@improbable-eng/grpc-web';
+import {  grpc } from '@improbable-eng/grpc-web';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ImprobableEngGrpcWebClientModule } from '@ngx-grpc/improbable-eng-grpc-web-client';
 
@@ -35,7 +35,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 import { ArchiveComponent } from "./archive/archive.component";
-import {MoviaServiceService  } from './services/movia-service.service';
+import { MoviaServiceService } from './services/movia-service.service';
 
 @NgModule({
   declarations: [
