@@ -4,7 +4,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MoviaServiceService } from '../services/movia-service.service';
-import { Bus, BusRequest } from '../generated/MoviaMobilEndPiontGrpc_pb';
+import { Bus, BusList, Request } from '../generated/MoviaMobilEndPiontGrpc_pb';
 
 
 
@@ -49,15 +49,18 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
   isExpansionDetailRow = (id: number, row: any | Bus) => this.isExpansionDetailRows(id, row);
 
   constructor(private dataserve: MoviaServiceService) {
-    this.dataserve.GetBusInfo("", new BusRequest());
+    this.dataserve.GetAllBuss();
 
-    this.dataserve.BusInfomation$.subscribe(x => {
+    this.dataserve.BusList$.subscribe(x => {
       this.matdatasource.data = [];
       this.matdatasourceBuss.data = [];
-      if (x.getName().length! < 0) {
-        this.matdatasourceBuss.data.push((x as Bus))
-        this.matdatasourceBuss._updateChangeSubscription();
-      }
+      x.forEach(bus => {
+
+        if (bus.getName.length! < 0) {
+          this.matdatasourceBuss.data.push(bus)
+          this.matdatasourceBuss._updateChangeSubscription();
+        }
+      });
     });
   }
 

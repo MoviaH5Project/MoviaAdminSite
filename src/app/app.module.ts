@@ -52,7 +52,14 @@ import { MoviaServiceService } from './services/movia-service.service';
     AppRoutingModule,
     MatTableModule,
     GrpcCoreModule.forRoot(),
-    ImprobableEngGrpcWebClientModule.forRoot({ settings: { host: '0.0.0.0', transport: grpc.CrossBrowserHttpTransport({}) } }),
+    ImprobableEngGrpcWebClientModule.forRoot({
+      settings:
+      { host: '193.106.164.115',
+      transport: grpc.CrossBrowserHttpTransport({
+        withCredentials:false
+      })
+    }
+  }),
     MatTabsModule,
     MatTableModule,
     MatPaginatorModule,
