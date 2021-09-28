@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { grpc } from '@improbable-eng/grpc-web';
 import { BehaviorSubject, Observable, of, Subject, zip } from 'rxjs';
-import { Bus, BusList, Request } from '../generated/MoviaMobilEndPiontGrpc_pb';
+import { Bus, BusList, Request, Route, RouteList } from '../generated/MoviaMobilEndPiontGrpc_pb';
 import { WebsiteGrpcEndpoint } from '../generated/MoviaMobilEndPiontGrpc_pb_service';
 
 @Injectable({
@@ -38,6 +38,17 @@ export class MoviaServiceService {
       host: this.hostAddress,
       onMessage: (Message: Response | any) => {
         console.log('entris change: ' + (Message as Response));
+      },
+      onEnd: (res) => { console.log() },
+    });
+  }
+
+  GetAllRoutes(){
+    grpc.invoke(WebsiteGrpcEndpoint.GetAllRoutes, {
+      request: new Request(),
+      host: this.hostAddress,
+      onMessage: (Message: Response | any) => {
+        console.log('entris change: ' + (Message as RouteList).getRoutesList()[0].getName());
       },
       onEnd: (res) => { console.log() },
     });

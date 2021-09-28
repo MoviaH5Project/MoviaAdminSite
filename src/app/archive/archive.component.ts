@@ -4,7 +4,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MoviaServiceService } from '../services/movia-service.service';
-import { Bus, BusList, Request } from '../generated/MoviaMobilEndPiontGrpc_pb';
+import { Bus, BusList, Request, Route } from '../generated/MoviaMobilEndPiontGrpc_pb';
 
 
 
@@ -37,10 +37,13 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild("paginatorDone") paginatorDone!: MatPaginator;
 
   /*--------------SimpleDataObjects--------------*/
-  public dataSource: Array<Bus> = new Array<Bus>();
+  // public dataSource: Array<Bus> = new Array<Bus>();
+  public dataSource: Array<Bus> = this.CreateBusTestData();
   /*--------------DataTable Values--------------*/
   displayedColumns = ["Id", "name", "make", "driver", "routeid", "totaltbuscap", "currentpaxcont"];
+  //First level tabel
   matdatasource = new MatTableDataSource<Bus>(this.dataSource);
+
   busen: Bus = new Bus();
   dataSourceBuss: Array<Bus> = new Array<Bus>();
   matdatasourceBuss = new MatTableDataSource<Bus>(this.dataSourceBuss);
@@ -49,19 +52,26 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
   isExpansionDetailRow = (id: number, row: any | Bus) => this.isExpansionDetailRows(id, row);
 
   constructor(private dataserve: MoviaServiceService) {
-    this.dataserve.GetAllBuss();
+    // this.dataserve.GetAllRoutes();
+    // this.dataserve.GetAllBuss();
 
-    this.dataserve.BusList$.subscribe(x => {
-      this.matdatasource.data = [];
-      this.matdatasourceBuss.data = [];
-      x.forEach(bus => {
+    this.dataSourceBuss = this.CreateBusTestData();
+    this.dataSource = this.dataSourceBuss;
+    this.matdatasourceBuss.data = this.dataSourceBuss;
+    this.Buss = this.dataSourceBuss;
 
-        if (bus.getName.length! < 0) {
-          this.matdatasourceBuss.data.push(bus)
-          this.matdatasourceBuss._updateChangeSubscription();
-        }
-      });
-    });
+    console.log(this.dataSourceBuss.length);
+    // this.dataserve.BusList$.subscribe(x => {
+    //   this.matdatasource.data = [];
+    //   this.matdatasourceBuss.data = [];
+    //   x.forEach(bus => {
+
+    //     if (bus.getName.length! < 0) {
+    //       this.matdatasourceBuss.data.push(bus)
+    //       this.matdatasourceBuss._updateChangeSubscription();
+    //     }
+    //   });
+    // });
   }
 
   ngAfterViewInit(): void {
@@ -93,9 +103,12 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
     this.matdatasourceBuss.filter = filterValue.trim().toLowerCase();
   }
 
-CreateBus(){
-this.dataserve.CreateBus(new Bus());
-}
+  CreateBus() {
+    var t = new Bus();
+    t.setId(0);
+    t.setName("martin");
+    this.dataserve.CreateBus(t);
+  }
   /**
    * This sets up the sorting logic for the table.
    *  displayedColumns = ["id", "name", "make", "driver", "routeid", "totaltbuscap", "currentpaxcont", "lat", "lon"];
@@ -104,8 +117,8 @@ this.dataserve.CreateBus(new Bus());
     this.matdatasource.sortingDataAccessor = (item, property) => {
       let switchValue = ""
       switch (property) {
-        case 'id': switchValue = item.getName(); break;
-        case 'name': switchValue = item.getId().toString(); break;
+        case 'Id': switchValue = item.getId().toString(); break;
+        case 'name': switchValue = item.getName(); break;
         case 'make': switchValue = item.getMake(); break;
         case 'driver': switchValue = item.getDriver(); break;
       }
@@ -128,7 +141,7 @@ this.dataserve.CreateBus(new Bus());
   }
 
   isExpansionDetailRows(i: number, row: Bus): boolean {
-    // console.log("Cheaking if row can be expanded");
+    console.log("Cheaking if row can be expanded");
     return true;
   }
 
@@ -143,10 +156,37 @@ this.dataserve.CreateBus(new Bus());
     return testBus;
   }
 
-  geList(element: Bus): Array<Bus> {
+  getList(element: Bus): Array<Bus> {
 
     return this.Buss;
   }
+  CreateBusTestData(): Array<Bus> {
+    var testBusList = new Array<Bus>();
+    // var tempbus = new Bus();
+    // tempbus.setDriver("martin");
+    // tempbus.setId(1);
+    // tempbus.setLatitude("57.1115");
+    // tempbus.setMake("vovlo");
+    // tempbus.setName("1202");
+    // tempbus.setRouteId(1202);
+    // tempbus.setTotalBusCapacity(22);
 
+    for (let i = 0; i < 15; i++) {
+
+      var tempbus = new Bus();
+      tempbus.setDriver("a" + i);
+      tempbus.setId(i);
+      tempbus.setLatitude("57.1115" + 1);
+      tempbus.setMake("vovlo");
+      tempbus.setName("1202");
+      tempbus.setRouteId(1202);
+      tempbus.setTotalBusCapacity(22);
+
+      testBusList[i] = tempbus;
+
+    }
+
+    return testBusList;
+  }
 
 }
