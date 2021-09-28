@@ -53,25 +53,26 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(private dataserve: MoviaServiceService) {
     // this.dataserve.GetAllRoutes();
-    // this.dataserve.GetAllBuss();
+    this.dataserve.GetAllBuss();
 
-    this.dataSourceBuss = this.CreateBusTestData();
-    this.dataSource = this.dataSourceBuss;
-    this.matdatasourceBuss.data = this.dataSourceBuss;
-    this.Buss = this.dataSourceBuss;
+    // this.dataSourceBuss = this.CreateBusTestData();
+    // this.dataSource = this.dataSourceBuss;
+    // this.matdatasourceBuss.data = this.dataSourceBuss;
+    // this.Buss = this.dataSourceBuss;
 
     console.log(this.dataSourceBuss.length);
-    // this.dataserve.BusList$.subscribe(x => {
-    //   this.matdatasource.data = [];
-    //   this.matdatasourceBuss.data = [];
-    //   x.forEach(bus => {
 
-    //     if (bus.getName.length! < 0) {
-    //       this.matdatasourceBuss.data.push(bus)
-    //       this.matdatasourceBuss._updateChangeSubscription();
-    //     }
-    //   });
-    // });
+    this.dataserve.BusList$.subscribe(x => {
+      this.matdatasource.data = [];
+      this.matdatasourceBuss.data = [];
+      console.log("SubBus have been subscribe too data is : " + x.length );
+      x.forEach(bus => {
+        if (bus.getName().length! < 0) {
+          this.matdatasourceBuss.data.push(bus)
+          this.matdatasourceBuss._updateChangeSubscription();
+        }
+      });
+    });
   }
 
   ngAfterViewInit(): void {
@@ -104,10 +105,15 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   CreateBus() {
-    var t = new Bus();
-    t.setId(0);
-    t.setName("martin");
-    this.dataserve.CreateBus(t);
+    var tempbus = new Bus();
+    tempbus.setDriver("a");
+    tempbus.setId(1);
+    tempbus.setLatitude("57.1115");
+    tempbus.setMake("vovlo");
+    tempbus.setName("1202");
+    tempbus.setRouteId(1202);
+    tempbus.setTotalBusCapacity(22);
+    this.dataserve.CreateBus(tempbus);
   }
   /**
    * This sets up the sorting logic for the table.

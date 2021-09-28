@@ -37,7 +37,7 @@ export class MoviaServiceService {
       request: newBus,
       host: this.hostAddress,
       onMessage: (Message: Response | any) => {
-        console.log('entris change: ' + (Message as Response));
+        console.log('entris change: ' + Message);
       },
       onEnd: (res) => { console.log() },
     });
