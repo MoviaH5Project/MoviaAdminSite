@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { grpc } from '@improbable-eng/grpc-web';
 import { BehaviorSubject, Observable, of, Subject, zip } from 'rxjs';
 import { Bus, BusList, Request } from '../generated/MoviaMobilEndPiontGrpc_pb';
-import { DatabaseGrpcService } from '../generated/MoviaMobilEndPiontGrpc_pb_service';
+import { WebsiteGrpcEndpoint } from '../generated/MoviaMobilEndPiontGrpc_pb_service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviaServiceService {
 
-  hostAddress = "http://193.106.164.115:5000";
+  hostAddress = "http://193.106.164.115:5100";
+  // hostAddress = "http://10.108.162.53:5100";
   BusInfomation$: BehaviorSubject<Bus> =
     new BehaviorSubject<Bus>(new Bus());
   BusList$: BehaviorSubject<Bus[]> = new BehaviorSubject<Bus[]>(new Array<Bus>());
@@ -19,7 +20,7 @@ export class MoviaServiceService {
   GetBus(busId: number, busToGet: Request) {
     var t = busToGet;
     t.setId(busId);
-    grpc.invoke(DatabaseGrpcService.GetBus, {
+    grpc.invoke(WebsiteGrpcEndpoint.GetBus, {
       request: t,
       host: this.hostAddress,
       onMessage: (Message: Bus) => {
@@ -32,7 +33,7 @@ export class MoviaServiceService {
 
   CreateBus(newBus: Bus) {
 
-    grpc.invoke(DatabaseGrpcService.CreateBus, {
+    grpc.invoke(WebsiteGrpcEndpoint.CreateBus, {
       request: newBus,
       host: this.hostAddress,
       onMessage: (Message: Response | any) => {
@@ -43,12 +44,12 @@ export class MoviaServiceService {
   }
 
   GetAllBuss() {
-    grpc.invoke(DatabaseGrpcService.GetAllBusses, {
+    grpc.invoke(WebsiteGrpcEndpoint.GetAllBusses, {
       request: new Request(),
       host:this.hostAddress,
       onMessage: (Messagse:BusList) =>{
-        console.log("BusList First Bus Name: " + Messagse.getBussesList()[0].getName());
-        this.BusList$.next(Messagse.getBussesList());
+        console.log("BusList First Bus Name: " + Messagse.getBuslistList()[0].getName());
+        this.BusList$.next(Messagse.getBuslistList());
       },onEnd:(res) => {}
     });
   }

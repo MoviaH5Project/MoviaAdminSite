@@ -1,47 +1,7 @@
-// package: DatabaseGrpcService
+// package: WebsiteGrpcEndpoint
 // file: src/app/protos/MoviaMobilEndPiontGrpc.proto
 
 import * as jspb from "google-protobuf";
-
-export class Request extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Request.AsObject;
-  static toObject(includeInstance: boolean, msg: Request): Request.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Request, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Request;
-  static deserializeBinaryFromReader(message: Request, reader: jspb.BinaryReader): Request;
-}
-
-export namespace Request {
-  export type AsObject = {
-    id: number,
-  }
-}
-
-export class Response extends jspb.Message {
-  getSucceeded(): boolean;
-  setSucceeded(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Response.AsObject;
-  static toObject(includeInstance: boolean, msg: Response): Response.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Response, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Response;
-  static deserializeBinaryFromReader(message: Response, reader: jspb.BinaryReader): Response;
-}
-
-export namespace Response {
-  export type AsObject = {
-    succeeded: boolean,
-  }
-}
 
 export class Bus extends jspb.Message {
   getId(): number;
@@ -96,10 +56,10 @@ export namespace Bus {
 }
 
 export class BusList extends jspb.Message {
-  clearBussesList(): void;
-  getBussesList(): Array<Bus>;
-  setBussesList(value: Array<Bus>): void;
-  addBusses(value?: Bus, index?: number): Bus;
+  clearBuslistList(): void;
+  getBuslistList(): Array<Bus>;
+  setBuslistList(value: Array<Bus>): void;
+  addBuslist(value?: Bus, index?: number): Bus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BusList.AsObject;
@@ -113,7 +73,47 @@ export class BusList extends jspb.Message {
 
 export namespace BusList {
   export type AsObject = {
-    bussesList: Array<Bus.AsObject>,
+    buslistList: Array<Bus.AsObject>,
+  }
+}
+
+export class Response extends jspb.Message {
+  getSucceeded(): boolean;
+  setSucceeded(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Response.AsObject;
+  static toObject(includeInstance: boolean, msg: Response): Response.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Response, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Response;
+  static deserializeBinaryFromReader(message: Response, reader: jspb.BinaryReader): Response;
+}
+
+export namespace Response {
+  export type AsObject = {
+    succeeded: boolean,
+  }
+}
+
+export class Request extends jspb.Message {
+  getId(): number;
+  setId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Request.AsObject;
+  static toObject(includeInstance: boolean, msg: Request): Request.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Request, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Request;
+  static deserializeBinaryFromReader(message: Request, reader: jspb.BinaryReader): Request;
+}
+
+export namespace Request {
+  export type AsObject = {
+    id: number,
   }
 }
 
@@ -285,9 +285,6 @@ export class Ticket extends jspb.Message {
   getPrice(): number;
   setPrice(value: number): void;
 
-  getPassengerId(): string;
-  setPassengerId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Ticket.AsObject;
   static toObject(includeInstance: boolean, msg: Ticket): Ticket.AsObject;
@@ -307,7 +304,6 @@ export namespace Ticket {
     departureStopId: number,
     destinationStopId: number,
     price: number,
-    passengerId: string,
   }
 }
 

@@ -1,361 +1,361 @@
-// package: DatabaseGrpcService
+// package: WebsiteGrpcEndpoint
 // file: src/app/protos/MoviaMobilEndPiontGrpc.proto
 
-import * as src_app_protos_MoviaMobilEndPiontGrpc_pb from "../generated/MoviaMobilEndPiontGrpc_pb";
+import * as src_app_protos_MoviaMobilEndPiontGrpc_pb from "./MoviaMobilEndPiontGrpc_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type DatabaseGrpcServiceCreateBus = {
+type WebsiteGrpcEndpointCreateBus = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Bus;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceGetBus = {
+type WebsiteGrpcEndpointGetBus = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Bus;
 };
 
-type DatabaseGrpcServiceGetAllBusses = {
+type WebsiteGrpcEndpointGetAllBusses = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.BusList;
 };
 
-type DatabaseGrpcServiceUpdateBus = {
+type WebsiteGrpcEndpointUpdateBus = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Bus;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceDeleteBus = {
+type WebsiteGrpcEndpointDeleteBus = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceCreateStop = {
+type WebsiteGrpcEndpointCreateStop = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Stop;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceGetStop = {
+type WebsiteGrpcEndpointGetStop = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Stop;
 };
 
-type DatabaseGrpcServiceGetAllStops = {
+type WebsiteGrpcEndpointGetAllStops = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.StopList;
 };
 
-type DatabaseGrpcServiceUpdateStop = {
+type WebsiteGrpcEndpointUpdateStop = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Stop;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceDeleteStop = {
+type WebsiteGrpcEndpointDeleteStop = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceCreateRoute = {
+type WebsiteGrpcEndpointCreateRoute = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Route;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceGetRoute = {
+type WebsiteGrpcEndpointGetRoute = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Route;
 };
 
-type DatabaseGrpcServiceGetAllRoutes = {
+type WebsiteGrpcEndpointGetAllRoutes = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.RouteList;
 };
 
-type DatabaseGrpcServiceUpdateRoute = {
+type WebsiteGrpcEndpointUpdateRoute = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Route;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceDeleteRoute = {
+type WebsiteGrpcEndpointDeleteRoute = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceCreatePassenger = {
+type WebsiteGrpcEndpointCreatePassenger = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Passenger;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceGetPassenger = {
+type WebsiteGrpcEndpointGetPassenger = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Passenger;
 };
 
-type DatabaseGrpcServiceGetAllPassengers = {
+type WebsiteGrpcEndpointGetAllPassengers = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.PassengerList;
 };
 
-type DatabaseGrpcServiceUpdatePassenger = {
+type WebsiteGrpcEndpointUpdatePassenger = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Passenger;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceDeletePassenger = {
+type WebsiteGrpcEndpointDeletePassenger = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceCreateTicket = {
+type WebsiteGrpcEndpointCreateTicket = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Ticket;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceGetTicket = {
+type WebsiteGrpcEndpointGetTicket = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Ticket;
 };
 
-type DatabaseGrpcServiceGetAllTickets = {
+type WebsiteGrpcEndpointGetAllTickets = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.TicketList;
 };
 
-type DatabaseGrpcServiceUpdateTicket = {
+type WebsiteGrpcEndpointUpdateTicket = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Ticket;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceDeleteTicket = {
+type WebsiteGrpcEndpointDeleteTicket = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceCreateNfc = {
+type WebsiteGrpcEndpointCreateNfc = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Nfc;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceGetNfc = {
+type WebsiteGrpcEndpointGetNfc = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Nfc;
 };
 
-type DatabaseGrpcServiceGetAllNfcs = {
+type WebsiteGrpcEndpointGetAllNfcs = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.NfcList;
 };
 
-type DatabaseGrpcServiceUpdateNfc = {
+type WebsiteGrpcEndpointUpdateNfc = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Nfc;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceDeleteNfc = {
+type WebsiteGrpcEndpointDeleteNfc = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceCreateFob = {
+type WebsiteGrpcEndpointCreateFob = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Fob;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceGetFob = {
+type WebsiteGrpcEndpointGetFob = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Fob;
 };
 
-type DatabaseGrpcServiceGetAllFobs = {
+type WebsiteGrpcEndpointGetAllFobs = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.FobList;
 };
 
-type DatabaseGrpcServiceUpdateFob = {
+type WebsiteGrpcEndpointUpdateFob = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Fob;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-type DatabaseGrpcServiceDeleteFob = {
+type WebsiteGrpcEndpointDeleteFob = {
   readonly methodName: string;
-  readonly service: typeof DatabaseGrpcService;
+  readonly service: typeof WebsiteGrpcEndpoint;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Request;
   readonly responseType: typeof src_app_protos_MoviaMobilEndPiontGrpc_pb.Response;
 };
 
-export class DatabaseGrpcService {
+export class WebsiteGrpcEndpoint {
   static readonly serviceName: string;
-  static readonly CreateBus: DatabaseGrpcServiceCreateBus;
-  static readonly GetBus: DatabaseGrpcServiceGetBus;
-  static readonly GetAllBusses: DatabaseGrpcServiceGetAllBusses;
-  static readonly UpdateBus: DatabaseGrpcServiceUpdateBus;
-  static readonly DeleteBus: DatabaseGrpcServiceDeleteBus;
-  static readonly CreateStop: DatabaseGrpcServiceCreateStop;
-  static readonly GetStop: DatabaseGrpcServiceGetStop;
-  static readonly GetAllStops: DatabaseGrpcServiceGetAllStops;
-  static readonly UpdateStop: DatabaseGrpcServiceUpdateStop;
-  static readonly DeleteStop: DatabaseGrpcServiceDeleteStop;
-  static readonly CreateRoute: DatabaseGrpcServiceCreateRoute;
-  static readonly GetRoute: DatabaseGrpcServiceGetRoute;
-  static readonly GetAllRoutes: DatabaseGrpcServiceGetAllRoutes;
-  static readonly UpdateRoute: DatabaseGrpcServiceUpdateRoute;
-  static readonly DeleteRoute: DatabaseGrpcServiceDeleteRoute;
-  static readonly CreatePassenger: DatabaseGrpcServiceCreatePassenger;
-  static readonly GetPassenger: DatabaseGrpcServiceGetPassenger;
-  static readonly GetAllPassengers: DatabaseGrpcServiceGetAllPassengers;
-  static readonly UpdatePassenger: DatabaseGrpcServiceUpdatePassenger;
-  static readonly DeletePassenger: DatabaseGrpcServiceDeletePassenger;
-  static readonly CreateTicket: DatabaseGrpcServiceCreateTicket;
-  static readonly GetTicket: DatabaseGrpcServiceGetTicket;
-  static readonly GetAllTickets: DatabaseGrpcServiceGetAllTickets;
-  static readonly UpdateTicket: DatabaseGrpcServiceUpdateTicket;
-  static readonly DeleteTicket: DatabaseGrpcServiceDeleteTicket;
-  static readonly CreateNfc: DatabaseGrpcServiceCreateNfc;
-  static readonly GetNfc: DatabaseGrpcServiceGetNfc;
-  static readonly GetAllNfcs: DatabaseGrpcServiceGetAllNfcs;
-  static readonly UpdateNfc: DatabaseGrpcServiceUpdateNfc;
-  static readonly DeleteNfc: DatabaseGrpcServiceDeleteNfc;
-  static readonly CreateFob: DatabaseGrpcServiceCreateFob;
-  static readonly GetFob: DatabaseGrpcServiceGetFob;
-  static readonly GetAllFobs: DatabaseGrpcServiceGetAllFobs;
-  static readonly UpdateFob: DatabaseGrpcServiceUpdateFob;
-  static readonly DeleteFob: DatabaseGrpcServiceDeleteFob;
+  static readonly CreateBus: WebsiteGrpcEndpointCreateBus;
+  static readonly GetBus: WebsiteGrpcEndpointGetBus;
+  static readonly GetAllBusses: WebsiteGrpcEndpointGetAllBusses;
+  static readonly UpdateBus: WebsiteGrpcEndpointUpdateBus;
+  static readonly DeleteBus: WebsiteGrpcEndpointDeleteBus;
+  static readonly CreateStop: WebsiteGrpcEndpointCreateStop;
+  static readonly GetStop: WebsiteGrpcEndpointGetStop;
+  static readonly GetAllStops: WebsiteGrpcEndpointGetAllStops;
+  static readonly UpdateStop: WebsiteGrpcEndpointUpdateStop;
+  static readonly DeleteStop: WebsiteGrpcEndpointDeleteStop;
+  static readonly CreateRoute: WebsiteGrpcEndpointCreateRoute;
+  static readonly GetRoute: WebsiteGrpcEndpointGetRoute;
+  static readonly GetAllRoutes: WebsiteGrpcEndpointGetAllRoutes;
+  static readonly UpdateRoute: WebsiteGrpcEndpointUpdateRoute;
+  static readonly DeleteRoute: WebsiteGrpcEndpointDeleteRoute;
+  static readonly CreatePassenger: WebsiteGrpcEndpointCreatePassenger;
+  static readonly GetPassenger: WebsiteGrpcEndpointGetPassenger;
+  static readonly GetAllPassengers: WebsiteGrpcEndpointGetAllPassengers;
+  static readonly UpdatePassenger: WebsiteGrpcEndpointUpdatePassenger;
+  static readonly DeletePassenger: WebsiteGrpcEndpointDeletePassenger;
+  static readonly CreateTicket: WebsiteGrpcEndpointCreateTicket;
+  static readonly GetTicket: WebsiteGrpcEndpointGetTicket;
+  static readonly GetAllTickets: WebsiteGrpcEndpointGetAllTickets;
+  static readonly UpdateTicket: WebsiteGrpcEndpointUpdateTicket;
+  static readonly DeleteTicket: WebsiteGrpcEndpointDeleteTicket;
+  static readonly CreateNfc: WebsiteGrpcEndpointCreateNfc;
+  static readonly GetNfc: WebsiteGrpcEndpointGetNfc;
+  static readonly GetAllNfcs: WebsiteGrpcEndpointGetAllNfcs;
+  static readonly UpdateNfc: WebsiteGrpcEndpointUpdateNfc;
+  static readonly DeleteNfc: WebsiteGrpcEndpointDeleteNfc;
+  static readonly CreateFob: WebsiteGrpcEndpointCreateFob;
+  static readonly GetFob: WebsiteGrpcEndpointGetFob;
+  static readonly GetAllFobs: WebsiteGrpcEndpointGetAllFobs;
+  static readonly UpdateFob: WebsiteGrpcEndpointUpdateFob;
+  static readonly DeleteFob: WebsiteGrpcEndpointDeleteFob;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -386,7 +386,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class DatabaseGrpcServiceClient {
+export class WebsiteGrpcEndpointClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);

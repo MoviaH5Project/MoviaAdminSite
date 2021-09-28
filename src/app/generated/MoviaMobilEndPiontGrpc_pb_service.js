@@ -1,342 +1,342 @@
-// package: DatabaseGrpcService
+// package: WebsiteGrpcEndpoint
 // file: src/app/protos/MoviaMobilEndPiontGrpc.proto
 
 var src_app_protos_MoviaMobilEndPiontGrpc_pb = require("./MoviaMobilEndPiontGrpc_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var DatabaseGrpcService = (function () {
-  function DatabaseGrpcService() {}
-  DatabaseGrpcService.serviceName = "DatabaseGrpcService.DatabaseGrpcService";
-  return DatabaseGrpcService;
+var WebsiteGrpcEndpoint = (function () {
+  function WebsiteGrpcEndpoint() {}
+  WebsiteGrpcEndpoint.serviceName = "WebsiteGrpcEndpoint.WebsiteGrpcEndpoint";
+  return WebsiteGrpcEndpoint;
 }());
 
-DatabaseGrpcService.CreateBus = {
+WebsiteGrpcEndpoint.CreateBus = {
   methodName: "CreateBus",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Bus,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.GetBus = {
+WebsiteGrpcEndpoint.GetBus = {
   methodName: "GetBus",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Bus
 };
 
-DatabaseGrpcService.GetAllBusses = {
+WebsiteGrpcEndpoint.GetAllBusses = {
   methodName: "GetAllBusses",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.BusList
 };
 
-DatabaseGrpcService.UpdateBus = {
+WebsiteGrpcEndpoint.UpdateBus = {
   methodName: "UpdateBus",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Bus,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.DeleteBus = {
+WebsiteGrpcEndpoint.DeleteBus = {
   methodName: "DeleteBus",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.CreateStop = {
+WebsiteGrpcEndpoint.CreateStop = {
   methodName: "CreateStop",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Stop,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.GetStop = {
+WebsiteGrpcEndpoint.GetStop = {
   methodName: "GetStop",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Stop
 };
 
-DatabaseGrpcService.GetAllStops = {
+WebsiteGrpcEndpoint.GetAllStops = {
   methodName: "GetAllStops",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.StopList
 };
 
-DatabaseGrpcService.UpdateStop = {
+WebsiteGrpcEndpoint.UpdateStop = {
   methodName: "UpdateStop",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Stop,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.DeleteStop = {
+WebsiteGrpcEndpoint.DeleteStop = {
   methodName: "DeleteStop",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.CreateRoute = {
+WebsiteGrpcEndpoint.CreateRoute = {
   methodName: "CreateRoute",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Route,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.GetRoute = {
+WebsiteGrpcEndpoint.GetRoute = {
   methodName: "GetRoute",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Route
 };
 
-DatabaseGrpcService.GetAllRoutes = {
+WebsiteGrpcEndpoint.GetAllRoutes = {
   methodName: "GetAllRoutes",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.RouteList
 };
 
-DatabaseGrpcService.UpdateRoute = {
+WebsiteGrpcEndpoint.UpdateRoute = {
   methodName: "UpdateRoute",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Route,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.DeleteRoute = {
+WebsiteGrpcEndpoint.DeleteRoute = {
   methodName: "DeleteRoute",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.CreatePassenger = {
+WebsiteGrpcEndpoint.CreatePassenger = {
   methodName: "CreatePassenger",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Passenger,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.GetPassenger = {
+WebsiteGrpcEndpoint.GetPassenger = {
   methodName: "GetPassenger",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Passenger
 };
 
-DatabaseGrpcService.GetAllPassengers = {
+WebsiteGrpcEndpoint.GetAllPassengers = {
   methodName: "GetAllPassengers",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.PassengerList
 };
 
-DatabaseGrpcService.UpdatePassenger = {
+WebsiteGrpcEndpoint.UpdatePassenger = {
   methodName: "UpdatePassenger",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Passenger,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.DeletePassenger = {
+WebsiteGrpcEndpoint.DeletePassenger = {
   methodName: "DeletePassenger",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.CreateTicket = {
+WebsiteGrpcEndpoint.CreateTicket = {
   methodName: "CreateTicket",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Ticket,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.GetTicket = {
+WebsiteGrpcEndpoint.GetTicket = {
   methodName: "GetTicket",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Ticket
 };
 
-DatabaseGrpcService.GetAllTickets = {
+WebsiteGrpcEndpoint.GetAllTickets = {
   methodName: "GetAllTickets",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.TicketList
 };
 
-DatabaseGrpcService.UpdateTicket = {
+WebsiteGrpcEndpoint.UpdateTicket = {
   methodName: "UpdateTicket",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Ticket,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.DeleteTicket = {
+WebsiteGrpcEndpoint.DeleteTicket = {
   methodName: "DeleteTicket",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.CreateNfc = {
+WebsiteGrpcEndpoint.CreateNfc = {
   methodName: "CreateNfc",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Nfc,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.GetNfc = {
+WebsiteGrpcEndpoint.GetNfc = {
   methodName: "GetNfc",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Nfc
 };
 
-DatabaseGrpcService.GetAllNfcs = {
+WebsiteGrpcEndpoint.GetAllNfcs = {
   methodName: "GetAllNfcs",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.NfcList
 };
 
-DatabaseGrpcService.UpdateNfc = {
+WebsiteGrpcEndpoint.UpdateNfc = {
   methodName: "UpdateNfc",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Nfc,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.DeleteNfc = {
+WebsiteGrpcEndpoint.DeleteNfc = {
   methodName: "DeleteNfc",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.CreateFob = {
+WebsiteGrpcEndpoint.CreateFob = {
   methodName: "CreateFob",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Fob,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.GetFob = {
+WebsiteGrpcEndpoint.GetFob = {
   methodName: "GetFob",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Fob
 };
 
-DatabaseGrpcService.GetAllFobs = {
+WebsiteGrpcEndpoint.GetAllFobs = {
   methodName: "GetAllFobs",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.FobList
 };
 
-DatabaseGrpcService.UpdateFob = {
+WebsiteGrpcEndpoint.UpdateFob = {
   methodName: "UpdateFob",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Fob,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-DatabaseGrpcService.DeleteFob = {
+WebsiteGrpcEndpoint.DeleteFob = {
   methodName: "DeleteFob",
-  service: DatabaseGrpcService,
+  service: WebsiteGrpcEndpoint,
   requestStream: false,
   responseStream: false,
   requestType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Request,
   responseType: src_app_protos_MoviaMobilEndPiontGrpc_pb.Response
 };
 
-exports.DatabaseGrpcService = DatabaseGrpcService;
+exports.WebsiteGrpcEndpoint = WebsiteGrpcEndpoint;
 
-function DatabaseGrpcServiceClient(serviceHost, options) {
+function WebsiteGrpcEndpointClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-DatabaseGrpcServiceClient.prototype.createBus = function createBus(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.createBus = function createBus(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.CreateBus, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.CreateBus, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -363,11 +363,11 @@ DatabaseGrpcServiceClient.prototype.createBus = function createBus(requestMessag
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getBus = function getBus(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getBus = function getBus(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetBus, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetBus, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -394,11 +394,11 @@ DatabaseGrpcServiceClient.prototype.getBus = function getBus(requestMessage, met
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getAllBusses = function getAllBusses(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getAllBusses = function getAllBusses(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetAllBusses, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetAllBusses, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -425,11 +425,11 @@ DatabaseGrpcServiceClient.prototype.getAllBusses = function getAllBusses(request
   };
 };
 
-DatabaseGrpcServiceClient.prototype.updateBus = function updateBus(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.updateBus = function updateBus(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.UpdateBus, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.UpdateBus, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -456,11 +456,11 @@ DatabaseGrpcServiceClient.prototype.updateBus = function updateBus(requestMessag
   };
 };
 
-DatabaseGrpcServiceClient.prototype.deleteBus = function deleteBus(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.deleteBus = function deleteBus(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.DeleteBus, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.DeleteBus, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -487,11 +487,11 @@ DatabaseGrpcServiceClient.prototype.deleteBus = function deleteBus(requestMessag
   };
 };
 
-DatabaseGrpcServiceClient.prototype.createStop = function createStop(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.createStop = function createStop(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.CreateStop, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.CreateStop, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -518,11 +518,11 @@ DatabaseGrpcServiceClient.prototype.createStop = function createStop(requestMess
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getStop = function getStop(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getStop = function getStop(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetStop, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetStop, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -549,11 +549,11 @@ DatabaseGrpcServiceClient.prototype.getStop = function getStop(requestMessage, m
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getAllStops = function getAllStops(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getAllStops = function getAllStops(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetAllStops, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetAllStops, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -580,11 +580,11 @@ DatabaseGrpcServiceClient.prototype.getAllStops = function getAllStops(requestMe
   };
 };
 
-DatabaseGrpcServiceClient.prototype.updateStop = function updateStop(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.updateStop = function updateStop(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.UpdateStop, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.UpdateStop, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -611,11 +611,11 @@ DatabaseGrpcServiceClient.prototype.updateStop = function updateStop(requestMess
   };
 };
 
-DatabaseGrpcServiceClient.prototype.deleteStop = function deleteStop(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.deleteStop = function deleteStop(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.DeleteStop, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.DeleteStop, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -642,11 +642,11 @@ DatabaseGrpcServiceClient.prototype.deleteStop = function deleteStop(requestMess
   };
 };
 
-DatabaseGrpcServiceClient.prototype.createRoute = function createRoute(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.createRoute = function createRoute(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.CreateRoute, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.CreateRoute, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -673,11 +673,11 @@ DatabaseGrpcServiceClient.prototype.createRoute = function createRoute(requestMe
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getRoute = function getRoute(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getRoute = function getRoute(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetRoute, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetRoute, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -704,11 +704,11 @@ DatabaseGrpcServiceClient.prototype.getRoute = function getRoute(requestMessage,
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getAllRoutes = function getAllRoutes(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getAllRoutes = function getAllRoutes(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetAllRoutes, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetAllRoutes, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -735,11 +735,11 @@ DatabaseGrpcServiceClient.prototype.getAllRoutes = function getAllRoutes(request
   };
 };
 
-DatabaseGrpcServiceClient.prototype.updateRoute = function updateRoute(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.updateRoute = function updateRoute(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.UpdateRoute, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.UpdateRoute, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -766,11 +766,11 @@ DatabaseGrpcServiceClient.prototype.updateRoute = function updateRoute(requestMe
   };
 };
 
-DatabaseGrpcServiceClient.prototype.deleteRoute = function deleteRoute(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.deleteRoute = function deleteRoute(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.DeleteRoute, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.DeleteRoute, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -797,11 +797,11 @@ DatabaseGrpcServiceClient.prototype.deleteRoute = function deleteRoute(requestMe
   };
 };
 
-DatabaseGrpcServiceClient.prototype.createPassenger = function createPassenger(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.createPassenger = function createPassenger(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.CreatePassenger, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.CreatePassenger, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -828,11 +828,11 @@ DatabaseGrpcServiceClient.prototype.createPassenger = function createPassenger(r
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getPassenger = function getPassenger(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getPassenger = function getPassenger(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetPassenger, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetPassenger, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -859,11 +859,11 @@ DatabaseGrpcServiceClient.prototype.getPassenger = function getPassenger(request
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getAllPassengers = function getAllPassengers(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getAllPassengers = function getAllPassengers(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetAllPassengers, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetAllPassengers, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -890,11 +890,11 @@ DatabaseGrpcServiceClient.prototype.getAllPassengers = function getAllPassengers
   };
 };
 
-DatabaseGrpcServiceClient.prototype.updatePassenger = function updatePassenger(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.updatePassenger = function updatePassenger(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.UpdatePassenger, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.UpdatePassenger, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -921,11 +921,11 @@ DatabaseGrpcServiceClient.prototype.updatePassenger = function updatePassenger(r
   };
 };
 
-DatabaseGrpcServiceClient.prototype.deletePassenger = function deletePassenger(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.deletePassenger = function deletePassenger(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.DeletePassenger, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.DeletePassenger, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -952,11 +952,11 @@ DatabaseGrpcServiceClient.prototype.deletePassenger = function deletePassenger(r
   };
 };
 
-DatabaseGrpcServiceClient.prototype.createTicket = function createTicket(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.createTicket = function createTicket(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.CreateTicket, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.CreateTicket, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -983,11 +983,11 @@ DatabaseGrpcServiceClient.prototype.createTicket = function createTicket(request
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getTicket = function getTicket(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getTicket = function getTicket(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetTicket, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetTicket, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1014,11 +1014,11 @@ DatabaseGrpcServiceClient.prototype.getTicket = function getTicket(requestMessag
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getAllTickets = function getAllTickets(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getAllTickets = function getAllTickets(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetAllTickets, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetAllTickets, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1045,11 +1045,11 @@ DatabaseGrpcServiceClient.prototype.getAllTickets = function getAllTickets(reque
   };
 };
 
-DatabaseGrpcServiceClient.prototype.updateTicket = function updateTicket(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.updateTicket = function updateTicket(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.UpdateTicket, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.UpdateTicket, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1076,11 +1076,11 @@ DatabaseGrpcServiceClient.prototype.updateTicket = function updateTicket(request
   };
 };
 
-DatabaseGrpcServiceClient.prototype.deleteTicket = function deleteTicket(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.deleteTicket = function deleteTicket(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.DeleteTicket, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.DeleteTicket, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1107,11 +1107,11 @@ DatabaseGrpcServiceClient.prototype.deleteTicket = function deleteTicket(request
   };
 };
 
-DatabaseGrpcServiceClient.prototype.createNfc = function createNfc(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.createNfc = function createNfc(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.CreateNfc, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.CreateNfc, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1138,11 +1138,11 @@ DatabaseGrpcServiceClient.prototype.createNfc = function createNfc(requestMessag
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getNfc = function getNfc(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getNfc = function getNfc(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetNfc, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetNfc, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1169,11 +1169,11 @@ DatabaseGrpcServiceClient.prototype.getNfc = function getNfc(requestMessage, met
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getAllNfcs = function getAllNfcs(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getAllNfcs = function getAllNfcs(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetAllNfcs, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetAllNfcs, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1200,11 +1200,11 @@ DatabaseGrpcServiceClient.prototype.getAllNfcs = function getAllNfcs(requestMess
   };
 };
 
-DatabaseGrpcServiceClient.prototype.updateNfc = function updateNfc(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.updateNfc = function updateNfc(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.UpdateNfc, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.UpdateNfc, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1231,11 +1231,11 @@ DatabaseGrpcServiceClient.prototype.updateNfc = function updateNfc(requestMessag
   };
 };
 
-DatabaseGrpcServiceClient.prototype.deleteNfc = function deleteNfc(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.deleteNfc = function deleteNfc(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.DeleteNfc, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.DeleteNfc, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1262,11 +1262,11 @@ DatabaseGrpcServiceClient.prototype.deleteNfc = function deleteNfc(requestMessag
   };
 };
 
-DatabaseGrpcServiceClient.prototype.createFob = function createFob(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.createFob = function createFob(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.CreateFob, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.CreateFob, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1293,11 +1293,11 @@ DatabaseGrpcServiceClient.prototype.createFob = function createFob(requestMessag
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getFob = function getFob(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getFob = function getFob(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetFob, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetFob, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1324,11 +1324,11 @@ DatabaseGrpcServiceClient.prototype.getFob = function getFob(requestMessage, met
   };
 };
 
-DatabaseGrpcServiceClient.prototype.getAllFobs = function getAllFobs(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.getAllFobs = function getAllFobs(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.GetAllFobs, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.GetAllFobs, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1355,11 +1355,11 @@ DatabaseGrpcServiceClient.prototype.getAllFobs = function getAllFobs(requestMess
   };
 };
 
-DatabaseGrpcServiceClient.prototype.updateFob = function updateFob(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.updateFob = function updateFob(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.UpdateFob, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.UpdateFob, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1386,11 +1386,11 @@ DatabaseGrpcServiceClient.prototype.updateFob = function updateFob(requestMessag
   };
 };
 
-DatabaseGrpcServiceClient.prototype.deleteFob = function deleteFob(requestMessage, metadata, callback) {
+WebsiteGrpcEndpointClient.prototype.deleteFob = function deleteFob(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(DatabaseGrpcService.DeleteFob, {
+  var client = grpc.unary(WebsiteGrpcEndpoint.DeleteFob, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1417,5 +1417,5 @@ DatabaseGrpcServiceClient.prototype.deleteFob = function deleteFob(requestMessag
   };
 };
 
-exports.DatabaseGrpcServiceClient = DatabaseGrpcServiceClient;
+exports.WebsiteGrpcEndpointClient = WebsiteGrpcEndpointClient;
 

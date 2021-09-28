@@ -93,7 +93,9 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
     this.matdatasourceBuss.filter = filterValue.trim().toLowerCase();
   }
 
-
+CreateBus(){
+this.dataserve.CreateBus(new Bus());
+}
   /**
    * This sets up the sorting logic for the table.
    *  displayedColumns = ["id", "name", "make", "driver", "routeid", "totaltbuscap", "currentpaxcont", "lat", "lon"];

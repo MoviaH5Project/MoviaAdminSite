@@ -54,7 +54,7 @@ import { MoviaServiceService } from './services/movia-service.service';
     GrpcCoreModule.forRoot(),
     ImprobableEngGrpcWebClientModule.forRoot({
       settings:
-      { host: '193.106.164.115',
+      { host: 'http://193.106.164.115:5100',
       transport: grpc.CrossBrowserHttpTransport({
         withCredentials:false
       })
