@@ -1,9 +1,7 @@
-<mat-card style="border-radius: 0px 0px 5px 5px;">
+<mat-card style="border-radius: 0px 0px 5px 5px; margin: 2%;">
   <div>
     <div style="margin-right: 5rem;">
-      <button mat-mini-fab class="maticonBounten" (click)='CreateBus()'>
-        <mat-icon>add</mat-icon>
-      </button>
+      <app-add-bus-form></app-add-bus-form>
     </div>
     <mat-form-field style="margin-left: 1rem; margin-bottom: 1rem;">
       <mat-label style="font-size: large">
@@ -30,12 +28,6 @@
       <ng-container matColumnDef="make">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>make</th>
         <td mat-cell *matCellDef="let element">{{( element.getMake() )}}
-          <a style="z-index: 10;">
-            <button mat-ripple (click)="GetBusInfomation(element)"
-              style="background-color:transparent; border-color: transparent; cursor: pointer; z-index: 1;">
-              <mat-icon>done</mat-icon>
-            </button>
-          </a>
         </td>
       </ng-container>
 
@@ -56,7 +48,7 @@
 
       <!-- currentpaxcont colum -->
       <ng-container matColumnDef="currentpaxcont">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>totaltbuscap</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nuværene antal passagse</th>
         <td mat-cell *matCellDef="let element">
           {{ element.getTotalBusCapacity() }}
         </td>
@@ -64,63 +56,83 @@
       <!-- routeid Column -->
       <ng-container matColumnDef="routeid">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>routeid</th>
-        <td mat-cell *matCellDef="let element">{{ element.getRouteId() }}<a *ngIf="element.getRouteId().length <= 0"
-            style="z-index: 10;">
+        <td mat-cell *matCellDef="let element">{{ element.getRouteId() }}
+        </td>
+      </ng-container>
+<!-- Delete/Options -->
+      <ng-container matColumnDef="DeleteRow">
+        <th mat-header-cell *matHeaderCellDef >Options</th>
+        <td mat-cell *matCellDef="let element"><a style="z-index: 10;">
 
-            <button mat-ripple (click)="DeleteBus(element)"
-              style="background-color:transparent; border-color: transparent; cursor: pointer; z-index: 1;">
-              <mat-icon>delete</mat-icon>
-            </button>
-          </a>
+          <button mat-ripple (click)="DeleteBus(element)"
+            style="background-color:transparent; border-color: transparent; cursor: pointer; z-index: 1;">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </a>
+        <a>
+          <button mat-ripple (click)="EditBus(element)"
+          style="background-color:transparent; border-color: transparent; cursor: pointer; z-index: 1;">
+          <mat-icon>edit</mat-icon>
+        </button>
+        </a>
         </td>
       </ng-container>
 
       <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
       <ng-container matColumnDef="expandedDetail">
         <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
-          <div class="example-element-detail" [@detailExpand]="(element === Buss) ? 'expanded' : 'collapsed'">
-            <div>
-              <table *ngIf="false">
-                <thead>
+          <div class="example-element-detail" [@detailExpand]="(element === busen) ? 'expanded' : 'collapsed'">
+              <table *ngIf="routeLocal.getName().length != 0">
+                <thead style="border-bottom: 1px solid #494949;">
                   <tr>
-                    <br>
-                    <th mat-header-cell style=" text-align: left;">Navn/Titel</th>
-                    <br>
-                    <th style=" text-align: left;">Rediger</th>
-                    <br>
-                    <th style=" text-align: right;">Fremdrift</th>
+                    <th style="border-bottom: 1px solid #757575; width: 35%; text-align: left; padding: 0px;">temp data</th>
+                    <th style="border-bottom: 1px solid #757575; width: 15%; text-align: center; padding: 0px;">temp data</th>
                   </tr>
                 </thead>
-                <tbody *ngFor="let item of dataSourceBuss">
-                  <tr>
-                    <!-- <td>{{item.getId()}}</td> -->
-                    <br>
-                    <td>{{item.getId()}}</td>
-                    <td id="testid">
+                <tbody >
+                  <tr  >
+                    <td style="overflow: hidden;
+                    text-overflow: clip;
+                    max-width: 0px;" class="hoverme" >
+                  </td>
+                    <td id="testid" style="text-align: center;">
                     </td>
 
                     <td>
                     </td>
                   </tr>
                 </tbody>
-
               </table>
-              <br>
-            </div>
+              <div style="padding-top: 1rem; z-index: 10; padding-bottom: 1rem;">
+              </div>
           </div>
-
         </td>
       </ng-container>
 
+      <!-- Expanded Content Column - The detail row is made up of this one column -->
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="example-element-row"
-        [class.example-expanded-row]="busen === row"
-         (click)="busen = busen  === row ? null : row"
+        [class.example-expanded-row]="busen == row" (click)="busen = busen  == row ? null: row"
         style="overflow: hidden;">
       </tr>
       <tr style="overflow: hidden;" mat-row *matRowDef="let row; columns: ['expandedDetail']"
         class="example-detail-row"></tr>
     </table>
+    <!--
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="example-element-row"
+        [class.example-expanded-row]="busen == row"
+         (click)="busen = busen  == row ? null : row"
+        style="overflow: hidden;">
+      </tr>
+      <tr style="overflow: hidden;" mat-row *matRowDef="let row; columns: ['expandedDetail']"
+        class="example-detail-row"></tr>
+    </table>
+     -->
     <mat-paginator #paginator [pageSizeOptions]="[5,10,25,100]"></mat-paginator>
   </div>
 </mat-card>
+<mat-progress-spinner style="position: absolute; top: 50%; left: 50%; translate: -50%,-50%; z-index: 5;"
+[mode]="'indeterminate'" *ngIf="loading$ |async"></mat-progress-spinner>
+

@@ -4,7 +4,8 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MoviaServiceService } from '../services/movia-service.service';
-import { Bus, BusList, Request, Route } from '../generated/MoviaMobilEndPiontGrpc_pb';
+import { Bus, BusList, Request, Route, Stop } from '../generated/MoviaMobilEndPiontGrpc_pb';
+import { LoadingService } from '../loading.service';
 
 
 
@@ -36,42 +37,38 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild("tableDone") tabledone!: MatTable<Bus>;
   @ViewChild("paginatorDone") paginatorDone!: MatPaginator;
 
+  /*----- spinner ----- */
+  loading$ = this.spinner.loading$;
   /*--------------SimpleDataObjects--------------*/
   // public dataSource: Array<Bus> = new Array<Bus>();
-  public dataSource: Array<Bus> = this.CreateBusTestData();
+  public dataSource: Array<Bus> = new Array<Bus>();
   /*--------------DataTable Values--------------*/
-  displayedColumns = ["Id", "name", "make", "driver", "routeid", "totaltbuscap", "currentpaxcont"];
+  displayedColumns = ["Id", "name", "make", "driver", "routeid", "totaltbuscap", "currentpaxcont", "DeleteRow"];
   //First level tabel
   matdatasource = new MatTableDataSource<Bus>(this.dataSource);
-
+  stopList = Array<Stop>();
   busen: Bus = new Bus();
+
   dataSourceBuss: Array<Bus> = new Array<Bus>();
   matdatasourceBuss = new MatTableDataSource<Bus>(this.dataSourceBuss);
   Buss: Array<Bus> = new Array<Bus>();
   expandingelement: Bus = new Bus();
+  routeLocal: Route = new Route();
   isExpansionDetailRow = (id: number, row: any | Bus) => this.isExpansionDetailRows(id, row);
 
-  constructor(private dataserve: MoviaServiceService) {
-    // this.dataserve.GetAllRoutes();
+  constructor(private dataserve: MoviaServiceService, private spinner: LoadingService) {
+    this.spinner.show();
+
     this.dataserve.GetAllBuss();
-
-    // this.dataSourceBuss = this.CreateBusTestData();
-    // this.dataSource = this.dataSourceBuss;
-    // this.matdatasourceBuss.data = this.dataSourceBuss;
-    // this.Buss = this.dataSourceBuss;
-
-    console.log(this.dataSourceBuss.length);
-
     this.dataserve.BusList$.subscribe(x => {
-      this.matdatasource.data = [];
+      this.matdatasource.data = x;
       this.matdatasourceBuss.data = [];
-      console.log("SubBus have been subscribe too data is : " + x.length );
+
       x.forEach(bus => {
-        if (bus.getName().length! < 0) {
-          this.matdatasourceBuss.data.push(bus)
-          this.matdatasourceBuss._updateChangeSubscription();
-        }
+        this.matdatasourceBuss.data.push(bus);
+        this.matdatasourceBuss._updateChangeSubscription();
       });
+      this.spinner.hide();
     });
   }
 
@@ -92,6 +89,15 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit() {
 
   }
+
+  GetAllStops(element: any) {
+    // this.dataserve.GetAllStops(element);
+    var t = element as Bus;
+    var s = new Request();
+    s.setId(t.getId());
+    this.dataserve.GetRoute(s);
+  }
+
   /**
    * This apply a filter to the matdatatable.
    */
@@ -104,17 +110,6 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
     this.matdatasourceBuss.filter = filterValue.trim().toLowerCase();
   }
 
-  CreateBus() {
-    var tempbus = new Bus();
-    tempbus.setDriver("a");
-    tempbus.setId(1);
-    tempbus.setLatitude("57.1115");
-    tempbus.setMake("vovlo");
-    tempbus.setName("1202");
-    tempbus.setRouteId(1202);
-    tempbus.setTotalBusCapacity(22);
-    this.dataserve.CreateBus(tempbus);
-  }
   /**
    * This sets up the sorting logic for the table.
    *  displayedColumns = ["id", "name", "make", "driver", "routeid", "totaltbuscap", "currentpaxcont", "lat", "lon"];
@@ -132,6 +127,7 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
     };
 
   }
+
   onSortDoneChange() {
     this.matdatasourceBuss.sortingDataAccessor = (item, property) => {
       let switchValue = ""
@@ -151,48 +147,33 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
     return true;
   }
 
-  GetAllBuss(element: any | Bus) {
-
-  }
   DeleteBus(element: Bus | Bus) {
-
+    var request = new Request();
+    request.setId(element.getId());
+    this.dataserve.DeleteBus(request);
   }
+
   GetBusInfomation(element: Bus | any): Bus {
     let testBus = this.busen;
     return testBus;
   }
+  CreateBus() { }
 
-  getList(element: Bus): Array<Bus> {
-
-    return this.Buss;
+  GetStopList(): Array<Stop> {
+    return this.stopList;
   }
-  CreateBusTestData(): Array<Bus> {
-    var testBusList = new Array<Bus>();
-    // var tempbus = new Bus();
-    // tempbus.setDriver("martin");
-    // tempbus.setId(1);
-    // tempbus.setLatitude("57.1115");
-    // tempbus.setMake("vovlo");
-    // tempbus.setName("1202");
-    // tempbus.setRouteId(1202);
-    // tempbus.setTotalBusCapacity(22);
 
-    for (let i = 0; i < 15; i++) {
+  GetRoute(element: Bus): Route {
+    var requset = new Request();
+    var tempbus = element;
+    requset.setId(tempbus.getId());
+    return this.dataserve.GetRoute(requset);
+  }
 
-      var tempbus = new Bus();
-      tempbus.setDriver("a" + i);
-      tempbus.setId(i);
-      tempbus.setLatitude("57.1115" + 1);
-      tempbus.setMake("vovlo");
-      tempbus.setName("1202");
-      tempbus.setRouteId(1202);
-      tempbus.setTotalBusCapacity(22);
-
-      testBusList[i] = tempbus;
-
-    }
-
-    return testBusList;
+  EditBus(element: Bus) {
+    var tempbus = element;
+    tempbus.setDriver("Martin");
+    this.dataserve.EditBus(tempbus);
   }
 
 }

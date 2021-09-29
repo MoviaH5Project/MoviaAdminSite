@@ -37,11 +37,16 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 import { ArchiveComponent } from "./archive/archive.component";
 import { MoviaServiceService } from './services/movia-service.service';
+import { CreatebusmodalComponent } from './Modals/createbusmodal/createbusmodal.component';
+import {LoadingService} from './loading.service';
+import { AddBusFormComponent } from './Modals/add-bus-form/add-bus-form.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ArchiveComponent,
+    CreatebusmodalComponent,
+    AddBusFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +90,7 @@ import { MoviaServiceService } from './services/movia-service.service';
     MatBottomSheetModule,
     FlexLayoutModule,
   ],
-  providers: [MoviaServiceService],
+  providers: [MoviaServiceService,LoadingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
