@@ -10,7 +10,7 @@ import { LoadingService } from '../../loading.service';
 })
 export class AddBusFormComponent implements OnInit {
 
-  @Input('projectid') projectid!:number
+  @Input('busId') busid!:number
   loading$ = this.spinner.loading$;
   constructor( private dilog: MatDialog , private spinner:LoadingService) {
    }
@@ -21,7 +21,7 @@ export class AddBusFormComponent implements OnInit {
   testDialog() {
     this.dilog.open(CreatebusmodalComponent,{
       data:{
-        projectid: this.projectid
+        busid: this.busid
       }
 
     });

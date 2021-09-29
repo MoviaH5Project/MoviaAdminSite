@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { Bus } from '../../generated/MoviaMobilEndPiontGrpc_pb';
-import { LoadingService } from '../../loading.service';
-import { MoviaServiceService } from '../../services/movia-service.service';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Bus } from 'src/app/generated/MoviaMobilEndPiontGrpc_pb';
+import { LoadingService } from 'src/app/loading.service';
+import { MoviaServiceService } from 'src/app/services/movia-service.service';
 
 @Component({
-  selector: 'app-createbusmodal',
-  templateUrl: './createbusmodal.component.html',
-  styleUrls: ['./createbusmodal.component.css']
+  selector: 'app-EditBusModal',
+  templateUrl: './EditBusModal.component.html',
+  styleUrls: ['./EditBusModal.component.css']
 })
-export class CreatebusmodalComponent implements OnInit {
+export class EditBusModalComponent implements OnInit {
 
   newBusFormcontroll = new FormControl('', [
     Validators.required,
@@ -31,13 +31,13 @@ export class CreatebusmodalComponent implements OnInit {
     busName:this.newBusFormcontroll,
     paxcap:this.newPaxCapFormcontroll,
     make:this.newmakeFormcontroll
-
   })
-
-
-  constructor(private dataservice:MoviaServiceService,private dialog:MatDialog,private spinner:LoadingService) { }
+  busToEdit = this.busid.data;
+  constructor(@Inject(MAT_DIALOG_DATA) public busid: any,private dataservice:MoviaServiceService,private dialog:MatDialog,private spinner:LoadingService) { }
 
   ngOnInit(): void {
+    this.busToEdit = this.busid.busid;
+    console.log("this is writined from EditBusModal" + this.busid.busid.getName());
   }
 
   CloseDialog(){
@@ -64,7 +64,7 @@ export class CreatebusmodalComponent implements OnInit {
     // return this.newBusFormcontroll.hasError('pattern') ? 'noget gik galt prøv igen' : '';
   }
 
-  AddNewBus(titel:string,busdriver:string,paxcap:string){
+  EditBus(titel:string,busdriver:string,paxcap:string){
     if(titel.length >= 4){
       let d = new Bus();
 
@@ -83,5 +83,5 @@ export class CreatebusmodalComponent implements OnInit {
 
     }
   }
-}
 
+}

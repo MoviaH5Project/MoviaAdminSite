@@ -47,6 +47,7 @@ export class MoviaServiceService {
       host: this.hostAddress,
       onMessage: (Message: Response | any) => {
         console.log('entris change: ' + Message);
+        this.GetAllBuss();
       },
       onEnd: (res) => { console.log() },
     });
@@ -77,7 +78,7 @@ export class MoviaServiceService {
       request: new Request(),
       host: this.hostAddress,
       onMessage: (Messagse: BusList) => {
-        console.log("BusList First Bus Name: " + Messagse.getBuslistList()[0].getName());
+        // console.log("BusList First Bus Name: " + Messagse.getBuslistList()[0].getName());
         this.BusList$.next(Messagse.getBuslistList());
       }, onEnd: (res) => { }
     });

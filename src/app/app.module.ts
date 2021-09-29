@@ -40,6 +40,8 @@ import { MoviaServiceService } from './services/movia-service.service';
 import { CreatebusmodalComponent } from './Modals/createbusmodal/createbusmodal.component';
 import {LoadingService} from './loading.service';
 import { AddBusFormComponent } from './Modals/add-bus-form/add-bus-form.component'
+import {EditbusFormComponent} from './Modals/editbusForm/editbusForm.component'
+import {EditBusModalComponent} from './Modals/EditBusModal/EditBusModal.component'
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { AddBusFormComponent } from './Modals/add-bus-form/add-bus-form.componen
     ArchiveComponent,
     CreatebusmodalComponent,
     AddBusFormComponent,
+    EditbusFormComponent,
+    EditBusModalComponent,
   ],
   imports: [
     BrowserModule,

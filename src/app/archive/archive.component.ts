@@ -40,7 +40,7 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
   /*----- spinner ----- */
   loading$ = this.spinner.loading$;
   /*--------------SimpleDataObjects--------------*/
-  // public dataSource: Array<Bus> = new Array<Bus>();
+
   public dataSource: Array<Bus> = new Array<Bus>();
   /*--------------DataTable Values--------------*/
   displayedColumns = ["Id", "name", "make", "driver", "routeid", "totaltbuscap", "currentpaxcont", "DeleteRow"];
