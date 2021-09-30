@@ -48,6 +48,7 @@ export class MoviaServiceService {
       onMessage: (Message: Response | any) => {
         console.log('entris change: ' + Message);
         this.GetAllBuss();
+
       },
       onEnd: (res) => { console.log() },
     });
