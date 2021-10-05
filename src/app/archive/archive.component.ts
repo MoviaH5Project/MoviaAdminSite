@@ -6,6 +6,7 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MoviaServiceService } from '../services/movia-service.service';
 import { Bus, BusList, Request, Route, Stop } from '../generated/MoviaMobilEndPiontGrpc_pb';
 import { LoadingService } from '../loading.service';
+import { interval } from 'rxjs/internal/observable/interval';
 
 
 
@@ -26,6 +27,8 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   pageEvent: PageEvent = new PageEvent();
+sub:any
+
 
   /*--------------ViewChilds--------------*/
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -49,6 +52,7 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
   stopList = Array<Stop>();
   busen: Bus = new Bus();
 
+
   dataSourceBuss: Array<Bus> = new Array<Bus>();
   matdatasourceBuss = new MatTableDataSource<Bus>(this.dataSourceBuss);
   Buss: Array<Bus> = new Array<Bus>();
@@ -69,6 +73,10 @@ export class ArchiveComponent implements OnInit, OnDestroy, AfterViewInit {
         this.matdatasourceBuss._updateChangeSubscription();
       });
       this.spinner.hide();
+    });
+
+    interval(1000).subscribe(x => {
+      this.dataserve.GetAllBuss();
     });
   }
 
